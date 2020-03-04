@@ -1,0 +1,49 @@
+<app-sayfa-basligi [heading]="'Yazarlar'" [icon]="'fa-desktop'"></app-sayfa-basligi>
+<div class="content-wrapper">
+
+  <div class="d-flex justify-content-end mr-4">
+    <button type="button" class="btn-sm btn-primary" (click)="openModal(yazarModal)">Yeni Yazar
+    </button>
+  </div>
+
+
+  <div class="pl-4 pr-4">
+    <ngx-datatable class="bootstrap" [rows]="rows" [columns]="columns" [columnMode]="'force'" [headerHeight]="50"
+      [footerHeight]="50" [rowHeight]="50">
+    </ngx-datatable>
+
+    <ng-template #colActionTemplate let-row="row" let-value="value">
+      <button (click)="showConfirmationModal(value)"><i class="fa fa-trash"></i></button>
+      <button [routerLink]="['yazar-detail/',value]">{{ 'Update' | translate }}</button>
+    </ng-template>
+  </div>
+
+  <ng-template #yazarModal>
+    <div class="modal-header">
+      <h4 class="modal-title w-100">{{ 'Yazar Bilgileri' }}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="closeAndResetModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <form [formGroup]="form" (ngSubmit)="saveYazar()">
+
+        <div class="form-group">
+          <label>{{ 'Author Name' | translate }}</label>
+          <input type="text" formControlName="YazarAdi" class="form-control" required />
+          <div *ngIf="form.get('YazarAdi').invalid" class="alert alert-danger">
+            <div *ngIf="form.get('YazarAdi').hasError('required')">
+              {{ 'Author Name Require' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-light" (click)="closeAndResetModal()">{{ 'Cancel'| translate}}</button>
+          <button class="btn btn-primary">{{ 'Kaydet'  }}</button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</div>

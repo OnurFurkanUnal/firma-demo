@@ -1,0 +1,58 @@
+<app-sayfa-basligi [heading]="'Kitaplar'" [icon]="'fa-desktop'"></app-sayfa-basligi>
+<div class="content-wrapper">
+       <div class="d-flex justify-content-end mr-2">
+        <button type="button" class="btn-sm btn-primary mr-4" (click)="openModal(kitapModal)">{{ 'Yeni Kitap' }}
+        </button>
+      </div>
+
+  <div class="pl-4 pr-4">
+    <ngx-datatable class="bootstrap" [rows]="rows" [columns]="columns" [columnMode]="'force'" [headerHeight]="50"
+      [footerHeight]="50" [rowHeight]="50">
+    </ngx-datatable>
+
+    <ng-template #colActionTemplate let-row="row" let-value="value">
+      <button (click)="showConfirmationModal(value)"><i class="fa fa-trash"></i></button>
+      <button [routerLink]="['kitap-detail/',value]">Guncelle</button>
+    </ng-template>
+  </div>
+
+  <ng-template #kitapModal>
+    <div class="modal-header">
+      <h4 class="modal-title w-100">{{ 'Kitap Bilgileri' }}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="closeAndResetModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <form [formGroup]="form" (ngSubmit)="saveKitap()">
+
+        <div class="form-group">
+          <label>Kitap Adi</label>
+          <input type="text" formControlName="KitapAdi" class="form-control" required />
+          <div *ngIf="form.get('KitapAdi').invalid" class="alert alert-danger">
+            <div *ngIf="form.get('KitapAdi').hasError('required')">
+              {{'Book Name Require' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Yazar Id</label>
+          <input type="text" formControlName="YazarId" class="form-control" required />
+          <div *ngIf="form.get('YazarId').invalid" class="alert alert-danger">
+            <div *ngIf="form.get('YazarId').hasError('required') || form.get('YazarId').hasError('gte')">
+              Yazar Id Girilmeli.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="modal-footer">
+          <button class="btn btn-light" (click)="closeAndResetModal()">{{ 'Close'}}</button>
+          <button class="btn btn-primary">{{ 'Kaydet'  }}</button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,10 @@
+<section class="wrapper">
+
+    <div class="content-area" id="main-container">
+        <app-header></app-header>
+            <p *ngIf="!isLoggedIn">{{ 'Welcome' | translate }}</p>
+            <router-outlet></router-outlet>
+
+    </div>
+</section>
+ <app-footer class="foot"></app-footer>

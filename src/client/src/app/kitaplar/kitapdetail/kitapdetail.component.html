@@ -1,0 +1,20 @@
+<app-sayfa-basligi [heading]="'Kitap Detay'" [icon]="'fa-desktop'"></app-sayfa-basligi>
+<div class="content-wrapper">
+
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">{{ 'Update Book' | translate }}</h3>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">{{ 'Book Name' | translate }}</span>
+      </div>
+      <input type="text" [(ngModel)]="result.KitapAdi">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateKitaps()"
+        routerLink="/kitaplar">{{ 'Update' | translate }}</button>
+    </div>
+
+  </div>
+</div>

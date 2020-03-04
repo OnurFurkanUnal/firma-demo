@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">{{ 'Menu' | translate }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Ana Sayfa </a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isLoggedIn">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Liste
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/yazarlar">Yazarlar</a>
+          <a class="dropdown-item" routerLink="/kitaplar">Kitaplar</a>
+
+
+        </div>
+      </li>
+    </ul>
+    <div class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto " *ngIf="isLoggedIn">
+        <a class="btn btn-success mr-4">{{hesapAdi}}</a>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <button type="button" class="btn btn-success mr-2" routerLink="/"
+          (click)="onLogout()">{{ 'Log Out' | translate }}</button>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <button type="button" class="btn btn-success mr-2"
+          routerLink="/girisDogrulama">{{ 'Log In' | translate }}</button>
+        <button type="button" class="btn btn-success" routerLink="/yeniKayit">{{ 'New User' | translate }}</button>
+      </ul>
+    </div>
+  </div>
+</nav>

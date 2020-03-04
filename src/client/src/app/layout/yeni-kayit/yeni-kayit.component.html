@@ -1,0 +1,34 @@
+<form [formGroup]="form" (ngSubmit)="kullaniciKaydet()">
+
+  <div class="form-group">
+    <label>{{ 'Email' | translate }}</label>
+    <input type="email" formControlName="email" class="form-control" required />
+    <div *ngIf="form.get('email').invalid " class="alert alert-danger">
+      {{ 'Email Require' | translate }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{ 'User' | translate }}</label>
+    <input type="text" formControlName="KullaniciAdi" class="form-control" required />
+    <div *ngIf="form.get('KullaniciAdi').invalid" class="alert alert-danger">
+      <div *ngIf="form.get('KullaniciAdi').hasError('required')">
+        {{ 'User Name Require' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{ 'Password' | translate }}</label>
+    <input type="text" formControlName="Sifre" class="form-control" required />
+    <div *ngIf="form.get('Sifre').invalid" class="alert alert-danger">
+      <div *ngIf="form.get('Sifre').hasError('required')">
+        {{ 'Password Require' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary">{{ 'Kaydet'  }}</button>
+  </div>
+</form>

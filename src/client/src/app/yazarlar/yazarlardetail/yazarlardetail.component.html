@@ -1,0 +1,21 @@
+<app-sayfa-basligi [heading]="'Yazar Detay'" [icon]="'fa-desktop'"></app-sayfa-basligi>
+<div class="content-wrapper">
+
+  <div class="col-md-12">
+
+    <h3 class="mb-3 text-center">{{ 'Update Author' | translate }}</h3>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">{{ 'Author Name' | translate }}</span>
+      </div>
+      <input type="text" [(ngModel)]="result.YazarAdi">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateYazars()"
+        routerLink="/yazarlar">{{ 'Update' | translate }}</button>
+    </div>
+
+  </div>
+</div>

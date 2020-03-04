@@ -1,0 +1,21 @@
+<div class="my-auto">
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p>{{ 'Title Log In' | translate }}</p>
+      <mat-form-field class="">
+        <input matInput placeholder="{{ 'User' | translate }}" formControlName="userName" autocomplete="on" required>
+        <mat-error *ngIf="isFieldInvalid('userName')">
+          {{ 'User' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="">
+        <input matInput type="password" placeholder="{{ 'Password' | translate }}" formControlName="password"
+          autocomplete="on" required>
+        <mat-error *ngIf="isFieldInvalid('userName')">
+          {{ 'Password' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">{{ 'Log In' | translate }}</button>
+    </form>
+  </mat-card-content>
+</div>
