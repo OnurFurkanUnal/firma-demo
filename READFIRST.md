@@ -1,22 +1,38 @@
 # NodeJS Project
 
-## Prerequisites
+main focus of firma-demo demonstrate cookies.You can prefer short live for cookies with refresh methods than blacklist. Because blacklists
+consuming memory that is little expensive. And if you will publish this project under https server set httpsOnly:true. It will adequate with
+good server config.
 
-- NodeJS ^8.9
-- npm ^5.6
+### Features: ###
 
-## Steps to Run inside CodeMix
+- NodeJS 
+- Angular Cli
+- ExpressJs
+- JsonWebTokens
 
-
-1. From the `Quick Open`  Command Palette (ctrl/cmd + shift + p) search for:
-     `Terminal: Create New Integrated Terminal`
-2. From the `Quick Open` options select this project.
-3. Once you are inside the Terminal, execute: `npm install`
-4. Finally to run this example run  `node src/app.js`
-5. Open your browser on http://localhost:3000
+### Requirements ###
+Node Js
+Angular Cli
 
 
+### Start App ###
 
+1.First Create firmademo and firmademotest databases
+2.Go to firma-demo folder run npm install
+3.G to firma-demo/src/client run npm install
 6.You can use sequelize.sync() if you dont want to add foreing keys manually
-7.sequelize db:migrate
-8.execute /sql/create_foreing_key.sql
+7.if execute manually foreing keys.That in /sql/create_foreing_key.sql
+8.sequelize db:migrate
+9.We are using cookie and these cookies not under https. We have used cookies on http localhost. So if you using windows 
+  go to  C:\Windows\System32\drivers\etc open hosts file and add 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com .
+  because localhost share same root for app and api. It cause cookie problem.
+  check http://digitalpbk.blogspot.com/2007/01/making-subdomains-on-localhost.html 
+  check firma-demo/win-localhost-setting/hosts.txt
+  It will help you to arrange subdomain on other systems
+10.After completed all sequentially instructions go to firma-demo folder and execute node src/app.js
+11.Then go to firma-demo/src/client and execute ng serve --host sub.localhosta.com --disable-host-check
+12.your backend url = http://localhosta.com:3456/ frontend url = http://sub.localhosta.com:4200/
+
+-- for questions onurfurkanunal@gmail.com
+  
