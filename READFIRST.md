@@ -11,6 +11,9 @@ consuming memory that is little expensive.
 - JsonWebTokens
 - Sequelize
 - Node Mailler
+- Ngx-Translater
+- Ngx-Datatable
+- Ngx-Toast
 
 ### Requirements ###
 Node Js

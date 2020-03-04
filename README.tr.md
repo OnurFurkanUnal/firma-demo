@@ -11,6 +11,9 @@ Black list kullanmayýn büyük uygulamalarda maliyetli olur.
 - JsonWebTokens
 - Sequelize
 - Node Mailler
+- Ngx-Translater
+- Ngx-Datatable
+- Ngx-Toast
 
 ### Ýhtiyaçlar ###
 Node Js
