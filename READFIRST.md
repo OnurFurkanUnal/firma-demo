@@ -10,6 +10,7 @@ consuming memory that is little expensive.
 - ExpressJs
 - JsonWebTokens
 - Sequelize
+- Node Mailler
 
 ### Requirements ###
 Node Js
@@ -22,7 +23,8 @@ Postgressql
 1.First Create firmademo and firmademotest databases
 2.Go to firma-demo folder run npm install
 3.Go to firma-demo/src/client run npm install
-6.You can use sequelize.sync() if you dont want to add foreing keys manually
+6.You can use sequelize.sync() if you dont want to add foreing keys manually but you can prefer continue without foreing keys 
+ because api is restricting users.
 7.if execute manually foreing keys.That in /sql/create_foreing_key.sql
 8.run sequelize db:migrate
 9.We are using cookie and these cookies not under https. We have used cookies on http localhost. So if you using windows or other OS 

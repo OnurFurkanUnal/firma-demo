@@ -9,6 +9,7 @@ nodemailer = require('nodemailer');
 module.exports = {
   index(req, res) {
     //Kullanıcıyı onayla ve giriş yetkisi ver
+    //Authentication and log in
     Kullanici.findAll({
       attributes: ['id', 'KullaniciAdi', 'Sifre', 'email'],
       where: { KullaniciAdi: req.params.KullaniciAdi, Sifre: req.params.Sifre },
@@ -19,9 +20,10 @@ module.exports = {
     })
       .then((kullanicis) => {
         //Kullanıcı giriş dogrulama işlemleri
+        //Authentication
         if (kullanicis[0].KullaniciAdi === req.params.KullaniciAdi && kullanicis[0].Sifre === req.params.Sifre) {
           //Token verne dogrulama için (güvenlik)
-
+          //Send Token
           const $kullaniciId = kullanicis[0].id
           return Methods.signIn($kullaniciId, res)
             .then((cookie) => {
@@ -36,6 +38,7 @@ module.exports = {
 
   isValid(req, res) {
     //Kullanıcıyı onayla ve giriş yetkisi ver
+    //Confirm user and log in
     Methods.isValide(req, res)
       .then((id) => {
         return id;
@@ -61,6 +64,7 @@ module.exports = {
 
   create(req, res) {
     //Yeni Kullanıcı Kaydı Olusturma
+    //New user record
     Kullanici.findAll({
       attributes: ['id', 'KullaniciAdi', 'Sifre', 'email'],
       where: { KullaniciAdi: req.body.KullaniciAdi },
@@ -71,6 +75,7 @@ module.exports = {
     })
       .then((kullanicis) => {
         //Dogrulama işlemleri
+        //validation
         var emailCheck = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (kullanicis[0] == null) {
           if (!/\s/.test(req.body.KullaniciAdi) && req.body.KullaniciAdi != "" && !/\s/.test(req.body.Sifre) && req.body.Sifre != "") {

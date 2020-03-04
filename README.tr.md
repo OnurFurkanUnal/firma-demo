@@ -10,6 +10,7 @@ Black list kullanmayýn büyük uygulamalarda maliyetli olur.
 - ExpressJs
 - JsonWebTokens
 - Sequelize
+- Node Mailler
 
 ### Ýhtiyaçlar ###
 Node Js
@@ -23,7 +24,8 @@ Postgressql
 2.firma-demo'ya gir ve npm install komutunu çalýþtýr
 3.firma-demo/src/client gir ve npm install komutunu çalýþtýr
 6.sequelize.sync() kullanabilirsin eðer elle eklemek istemiyorsan foreing keyleri
-7.eðer elinle foreing keys yazýcaksan./sql/create_foreing_key.sql dosyasý içinde hazýr bulunuyor
+7.eðer elinle foreing keys yazýcaksan./sql/create_foreing_key.sql dosyasý içinde hazýr bulunuyor ama bu iþlemide yapmayabilirsiniz
+  çünkü api gerekli kýsýtlamalarý yapýyor.
 8.sequelize db:migrate komutunu çalýþtýr
 9.Çerez kullanýyoruz ve bu çerezler http altýnda localhost kullanýlarak iþleniyor.Eðer windows kullanýyorsan yada baþka
   bir iþletim sistemi C:\Windows\System32\drivers\etc klasörü altýnda hosts dosyasýný yetkili olarak notepad kullanarak aç

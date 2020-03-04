@@ -4,10 +4,12 @@ const { QueryTypes } = require('sequelize');
 
 module.exports = {
   index(req, res) {
+    //Check user log status. If log in grab id from json token
     //Giriş yapdımı kontrol et ve kullanıcı id'si al tokenden.
     Methods.welcome(req, res)
       .then(($kullaniciId) => {
         //Kullanıcının tüm kitaplarını listele
+        //List all books of user
         return Kitap.sequelize.query(' SELECT "Kitaps"."id", "Kitaps"."KitapAdi", "Kitaps"."YazarId", "Kitaps"."createdAt", "Kitaps"."updatedAt" FROM "Kitaps" INNER JOIN "Yazars" ON "Kitaps"."YazarId"="Yazars"."id" INNER JOIN "Kullanicis" ON "Yazars"."KullaniciId"="Kullanicis"."id"  WHERE "Kullanicis"."id" =' + $kullaniciId,
           { type: QueryTypes.SELECT, attributes: ['id', 'KitapAdi', 'YazarId'], })
       })
@@ -16,15 +18,18 @@ module.exports = {
   },
 
   show(req, res) {
+    //Check user log status. If log in grab id from json token
     //Giriş yapdımı kontrol et ve kullanıcı id'si al tokenden.
     Methods.welcome(req, res)
       .then(($kullaniciId) => {
         //Kitabı bul
+        //Find book
         return Kitap.sequelize.query(' SELECT "Kitaps"."id", "Kitaps"."KitapAdi", "Kitaps"."YazarId", "Kitaps"."createdAt", "Kitaps"."updatedAt" FROM "Kitaps" INNER JOIN "Yazars" ON "Kitaps"."YazarId"="Yazars"."id" INNER JOIN "Kullanicis" ON "Yazars"."KullaniciId"="Kullanicis"."id" WHERE "Kullanicis"."id" = ' + $kullaniciId + '  AND "Kitaps"."id"=' + req.params.id,
           { type: QueryTypes.SELECT })
       })
       .then((kitap) => {
         //Dogrulama işlemleri
+        //validation
         if (kitap[0].id !== null) {
           return res.status(200).json(kitap).end();
         }
@@ -36,6 +41,7 @@ module.exports = {
 
   create(req, res) {
     //Giriş yapdımı kontrol et ve kullanıcı id'si al tokenden.
+    //Check user log status. If log in grab id from json token
     var $kullaniciId;
     Methods.welcome(req, res)
       .then(($kullaniciIdd) => {
@@ -49,6 +55,7 @@ module.exports = {
       })
       .then((yazar) => {
         //Dogrulama işlemleri
+        //validation
         if (yazar == null || yazar.KullaniciId !== $kullaniciId) {
           throw Error(res.status(400).send('Lütfen gecerli bir yazar seciniz.').end());
         }
@@ -68,6 +75,7 @@ module.exports = {
 
   update(req, res) {
     //Giriş yapdımı kontrol et ve kullanıcı id'si al tokenden.
+    //Check user log status. If log in grab id from json token
     var $kullaniciId;
     var $yazarid;
     Methods.welcome(req, res)
@@ -76,6 +84,7 @@ module.exports = {
       })
       .then(() => {
         //Kitap bul
+        //find book
         return Kitap.findByPk(req.params.id)
       })
       .then((kitap) => {
@@ -88,6 +97,7 @@ module.exports = {
        })
        .then(() => {
         //Yazarını bul
+        //Find Author
        return Yazar.findByPk($yazarid, {
           where: {
             KullaniciId: $kullaniciId
@@ -96,6 +106,7 @@ module.exports = {
       })
       .then((yazar) => {
         //Dogrulama işlemleri
+        //validation
         if (yazar.id == null) {
           throw Error(res.status(400).send('Lütfen bilgileri doğru giriniz.').end())
         }
@@ -107,6 +118,7 @@ module.exports = {
         }
         else {
           //Kitap güncelle
+          //Update Book
           return yazar;
         }
 
@@ -120,17 +132,20 @@ module.exports = {
 
   delete(req, res) {
     //Giriş yapdımı kontrol et ve kullanıcı id'si al tokenden.
+    //Check user log status. If log in grab id from json token
     var $kullaniciId;
     var $yazarid;
     Methods.welcome(req, res)
       .then(($kullaniciIdd) => {
         $kullaniciId = $kullaniciIdd;
         //Kitap bul
+        //Find book
         return Kitap.findByPk(req.params.id)
       })
       .then((kitap) => {
         $yazarid = kitap.YazarId
         //Kitabın yazarını bul
+        //Find author of book
         return Yazar.findByPk($yazarid, {
           where: {
             KullaniciId: $kullaniciId
@@ -139,6 +154,7 @@ module.exports = {
       })
       .then((yazar) => {
         //Dogrulama işlemleri
+        //validation
         if (yazar.id == null) {
           throw Error(res.status(400).send('Lütfen bilgileri doğru giriniz.').end())
         }
@@ -147,6 +163,7 @@ module.exports = {
         }
         else {
           //Kitap silme işlemi
+          //Delete book
           return yazar;
         }
 
