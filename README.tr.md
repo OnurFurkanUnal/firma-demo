@@ -41,5 +41,5 @@ Postgressql
 * 9.Ardýndan firma-demo/src/client dosyasýna git ve ng serve --host sub.localhosta.com --disable-host-check komutunu çalýþtýr.
 * 10.Server url = http://localhosta.com:3456/ uygulama url = http://sub.localhosta.com:4200/ olacakdýr.
 
-* -- soru ve görüþleriniz için onurfurkanunal@gmail.com
+-- soru ve görüþleriniz için onurfurkanunal@gmail.com
   

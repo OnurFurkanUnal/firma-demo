@@ -40,5 +40,5 @@ Postgressql
 * 11.Then go to firma-demo/src/client and execute ng serve --host sub.localhosta.com --disable-host-check
 * 12.your backend url = http://localhosta.com:3456/ frontend url = http://sub.localhosta.com:4200/
 
-* -- for questions and comments onurfurkanunal@gmail.com
+-- for questions and comments onurfurkanunal@gmail.com
   
