@@ -1,6 +1,6 @@
 # NodeJS And Angular Project
 
-main focus of firma-demo demonstrate cookies.You can prefer short live for cookies with refresh methods than blacklist. Because blacklists
+main focus of firma-demo demonstrate cookies.You can prefer short life to blacklist for cookies with refresh methods. Because blacklists
 consuming memory that is little expensive.
 
 ### Features: ###
