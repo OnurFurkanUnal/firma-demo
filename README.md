@@ -23,7 +23,7 @@ Postgressql
 
 ### Start App ###
 
-* First Create firmademo and firmademotest databases
+* Create firmademo and firmademotest databases
 * Go to firma-demo folder run npm install
 * Go to firma-demo/src/client run npm install
 * if you dont want to add foreing keys manually. You can use sequelize.sync() But you can continue without foreing keys 
