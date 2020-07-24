@@ -28,7 +28,7 @@ Postgressql
 * Go to firma-demo/src/client run npm install
 * if you dont want to add foreing keys manually. You can use sequelize.sync() But you can continue without foreing keys 
   Because api is restricting users.
-* manually you want to execute foreing keys. Keys are in /sql/create_foreing_key.sql
+* If you want to execute foreing keys manually. Keys are in /sql/create_foreing_key.sql
 * run sequelize db:migrate
 * We are using cookies. Cookies are not under https. We have used cookies on http localhost. If you using windows or other OS 
   go to  C:\Windows\System32\drivers\etc open hosts file and add 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com .
