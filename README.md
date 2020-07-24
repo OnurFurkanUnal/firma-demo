@@ -1,7 +1,7 @@
 # NodeJS And Angular Project
 
 Main focus of firma-demo demonstrate cookies.You can prefer short life to blacklist for cookies. You need refresh methods for blacklist. Blacklists
-consuming memory. That is little expensive.
+consuming memory. That's a little expensive.
 
 ### Features: ###
 
@@ -36,9 +36,9 @@ Postgressql
   check http://digitalpbk.blogspot.com/2007/01/making-subdomains-on-localhost.html 
   check firma-demo/win-localhost-setting/hosts.txt
   It will help you to arrange subdomain on other systems
-* After completed all sequentially instructions go to firma-demo folder and execute node src/app.js
+* After completed all instructions. Go to firma-demo folder and execute node src/app.js
 * Then go to firma-demo/src/client and execute ng serve --host sub.localhosta.com --disable-host-check
-* your backend url = http://localhosta.com:3456/ frontend url = http://sub.localhosta.com:4200/
+* Your backend url = http://localhosta.com:3456/ frontend url = http://sub.localhosta.com:4200/
 
 -- for questions and comments onurfurkanunal@gmail.com
   
