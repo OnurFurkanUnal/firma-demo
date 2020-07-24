@@ -1,9 +1,9 @@
 # NodeJS And Angular Projesi
 
-Bu projenin amacı localhost üzerinde çerez kullanımını göstermekdir.Çerezlerin yaşam ömrünü kısa tutup sürekli yenilemeyi tercih edebilirsiniz
-Black list kullanmayın büyük uygulamalarda maliyetli olur.
+Bu projenin amacÄ± localhost Ã¼zerinde Ã§erez kullanÄ±mÄ±nÄ± gÃ¶stermekdir.Ã‡erezlerin yaÅŸam Ã¶mrÃ¼nÃ¼ kÄ±sa tutup sÃ¼rekli yenilemeyi tercih edebilirsiniz
+Black list kullanmayÄ±n bÃ¼yÃ¼k uygulamalarda maliyetli olur.
 
-### Özellikler: ###
+### Ã–zellikler: ###
 
 - NodeJS 
 - Angular Cli
@@ -15,31 +15,31 @@ Black list kullanmayın büyük uygulamalarda maliyetli olur.
 - Ngx-Datatable
 - Ngx-Toast
 
-### İhtiyaçlar ###
+### Ä°htiyaÃ§lar ###
 Node Js
 Angular Cli
 Postgressql
 
 
-### Uygulamayı Başlatmak ###
+### UygulamayÄ± BaÅŸlatmak ###
 
-* 1.İlk firmademo ve formademotest databasesi oluştur
-* 2.firma-demo'ya gir ve npm install komutunu çalıştır
-* 3.firma-demo/src/client gir ve npm install komutunu çalıştır
-* 4sequelize.sync() kullanabilirsin eğer elle eklemek istemiyorsan foreing keyleri
-* 5.eğer elinle foreing keys yazıcaksan./sql/create_foreing_key.sql dosyası içinde hazır bulunuyor ama bu işlemide yapmayabilirsiniz
-  çünkü api gerekli kısıtlamaları yapıyor.
-* 6.sequelize db:migrate komutunu çalıştır
-* 7.Çerez kullanıyoruz ve bu çerezler http altında localhost kullanılarak işleniyor.Eğer windows kullanıyorsan yada başka
-  bir işletim sistemi C:\Windows\System32\drivers\etc klasörü altında hosts dosyasını yetkili olarak notepad kullanarak aç
-  ve 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com ekle.Çünkü localhost aynı kökü paylaşıyor 2 uygulamada.
-  Bu çerezlerde soruna yol açıyor. Daha detaylı görmek için
+* Ä°lk firmademo ve formademotest databasesi oluÅŸtur
+* Firma-demo'ya gir ve npm install komutunu Ã§alÄ±ÅŸtÄ±r
+* firma-demo/src/client gir ve npm install komutunu Ã§alÄ±ÅŸtÄ±r
+* sequelize.sync() kullanabilirsin eÄŸer elle eklemek istemiyorsan foreing keyleri
+* EÄŸer elinle foreing keys yazÄ±caksan./sql/create_foreing_key.sql dosyasÄ± iÃ§inde hazÄ±r bulunuyor ama bu iÅŸlemide yapmayabilirsiniz
+  Ã§Ã¼nkÃ¼ api gerekli kÄ±sÄ±tlamalarÄ± yapÄ±yor.
+* sequelize db:migrate komutunu Ã§alÄ±ÅŸtÄ±r
+* Ã‡erez kullanÄ±yoruz ve bu Ã§erezler http altÄ±nda localhost kullanÄ±larak iÅŸleniyor.EÄŸer windows kullanÄ±yorsan yada baÅŸka
+  bir iÅŸletim sistemi C:\Windows\System32\drivers\etc klasÃ¶rÃ¼ altÄ±nda hosts dosyasÄ±nÄ± yetkili olarak notepad kullanarak aÃ§
+  ve 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com ekle.Ã‡Ã¼nkÃ¼ localhost aynÄ± kÃ¶kÃ¼ paylaÅŸÄ±yor 2 uygulamada.
+  Bu Ã§erezlerde soruna yol aÃ§Ä±yor. Daha detaylÄ± gÃ¶rmek iÃ§in
   http://digitalpbk.blogspot.com/2007/01/making-subdomains-on-localhost.html linkini kontrol et
-  senin için firma-demo/win-localhost-setting/hosts.txt dosyası koydum. Eğer Windows 10 kullanıyorsan aynısını kopyala yapıştır.
-  Sana yardımcı olacakdır subdomain ayarlaman konusunda tüm sistemlerde.
-* 8.Sırasıyla işlemleri tamamladıysan firma-demo dosyasına git  node src/app.js komutunu çalıştır.
-* 9.Ardından firma-demo/src/client dosyasına git ve ng serve --host sub.localhosta.com --disable-host-check komutunu çalıştır.
-* 10.Server url = http://localhosta.com:3456/ uygulama url = http://sub.localhosta.com:4200/ olacakdır.
+  senin iÃ§in firma-demo/win-localhost-setting/hosts.txt dosyasÄ± koydum. EÄŸer Windows 10 kullanÄ±yorsan aynÄ±sÄ±nÄ± kopyala yapÄ±ÅŸtÄ±r.
+  Sana yardÄ±mcÄ± olacakdÄ±r subdomain ayarlaman konusunda tÃ¼m sistemlerde.
+* SÄ±rasÄ±yla iÅŸlemleri tamamladÄ±ysan firma-demo dosyasÄ±na git  node src/app.js komutunu Ã§alÄ±ÅŸtÄ±r.
+* ArdÄ±ndan firma-demo/src/client dosyasÄ±na git ve ng serve --host sub.localhosta.com --disable-host-check komutunu Ã§alÄ±ÅŸtÄ±r.
+* Server url = http://localhosta.com:3456/ uygulama url = http://sub.localhosta.com:4200/ olacakdÄ±r.
 
--- soru ve görüşleriniz için onurfurkanunal@gmail.com
+-- soru ve gÃ¶rÃ¼ÅŸleriniz iÃ§in onurfurkanunal@gmail.com
   
