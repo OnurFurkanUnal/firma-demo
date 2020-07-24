@@ -1,7 +1,7 @@
 # NodeJS And Angular Project
 
-main focus of firma-demo demonstrate cookies.You can prefer short life to blacklist for cookies (refresh methods). Because blacklists
-consuming memory that is little expensive.
+Main focus of firma-demo demonstrate cookies.You can prefer short life to blacklist for cookies. You need refresh methods for blacklist. Blacklists
+consuming memory. That is little expensive.
 
 ### Features: ###
 
@@ -28,9 +28,9 @@ Postgressql
 * Go to firma-demo/src/client run npm install
 * if you dont want to add foreing keys manually. You can use sequelize.sync() But you can continue without foreing keys 
   Because api is restricting users.
-* if execute manually foreing keys.That in /sql/create_foreing_key.sql
+* manually you want to execute foreing keys. Keys are in /sql/create_foreing_key.sql
 * run sequelize db:migrate
-* We are using cookie and these cookies not under https. We have used cookies on http localhost. If you using windows or other OS 
+* We are using cookies. Cookies are not under https. We have used cookies on http localhost. If you using windows or other OS 
   go to  C:\Windows\System32\drivers\etc open hosts file and add 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com .
   Because localhost share same root for app and api. It cause cookie problem.
   check http://digitalpbk.blogspot.com/2007/01/making-subdomains-on-localhost.html 
