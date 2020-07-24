@@ -30,8 +30,7 @@ Postgressql
   Because api is restricting users.
 * If you want to execute foreing keys manually. Keys are in /sql/create_foreing_key.sql
 * run sequelize db:migrate
-* We are using cookies. Cookies are not under https. We have used cookies on http localhost. If you using windows or other OS 
-  go to  C:\Windows\System32\drivers\etc open hosts file and add 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com .
+* We are using cookies. Cookies are not under https. We have used cookies on http localhost. If you using windows go to  C:\Windows\System32\drivers\etc open hosts file and add 127.0.0.1 localhosta.com  127.0.0.1 sub.localhosta.com .
   Because localhost share same root for app and api. It cause cookie problem.
   check http://digitalpbk.blogspot.com/2007/01/making-subdomains-on-localhost.html 
   check firma-demo/win-localhost-setting/hosts.txt
